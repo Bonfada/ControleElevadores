@@ -13,8 +13,8 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel AndarMenosUtilizado()
         {
-            RetornoModel retorno = new();
-            List<int> listaAndares = new();
+            RetornoModel retorno = new RetornoModel();
+            List<int> listaAndares = new List<int>();
 
             if (_valores == null)
             {
@@ -41,8 +41,8 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public List<int> DeveRetornarUmaListaMenorAndar()
         {
-            RetornoModel retorno = new();
-            List<int> listaAndares = new();
+            RetornoModel retorno = new RetornoModel();
+            List<int> listaAndares = new List<int>();
             var dict = _valores
                         .GroupBy(x => new { x.Andar })
                         .Where(g => g.Count() == 1)
@@ -63,8 +63,8 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel ElevadorMaisFrequentado()
         {
-            RetornoModel retorno = new();
-            List<char> listaElevadores = new();
+            RetornoModel retorno = new RetornoModel();
+            List<char> listaElevadores = new List<char>();
 
             if (_valores == null)
             {
@@ -93,8 +93,8 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel ElevadorMenosFrequentado()
         {
-            RetornoModel retorno = new();
-            List<char> listaElevadores = new();
+            RetornoModel retorno = new RetornoModel();
+            List<char> listaElevadores = new List<char>();
 
 
             if (_valores == null)
@@ -124,8 +124,8 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel PeriodoMaiorFluxoElevadorMaisFrequentado()
         {
-            RetornoModel retorno = new();
-            List<char> turnos = new();
+            RetornoModel retorno = new RetornoModel();
+            List<char> turnos = new List<char>();
 
             if (_valores == null)
             {
@@ -158,8 +158,8 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel PeriodoMenorFluxoElevadorMenosFrequentado()
         {
-            RetornoModel retorno = new();
-            List<char> turnos = new();
+            RetornoModel retorno = new RetornoModel();
+            List<char> turnos = new List<char>();
 
             if (_valores == null)
             {
@@ -189,11 +189,10 @@ namespace ProvaAdmissionalCSharpApisul.Service
             return retorno;
         }
 
-
         public RetornoModel PeriodoMaiorUtilizacaoConjuntoElevadores()
         {
-            RetornoModel retorno = new();
-            List<char> listaTurnos = new();
+            RetornoModel retorno = new RetornoModel();
+            List<char> listaTurnos = new List<char>();
 
             if (_valores == null)
             {
@@ -219,10 +218,9 @@ namespace ProvaAdmissionalCSharpApisul.Service
             return retorno;
         }
 
-
         public RetornoModel PercentualDeUsoElevadorA()
         {
-            RetornoModel retorno = new();
+            RetornoModel retorno = new RetornoModel();
             decimal percentualUsoElevador = 0;
 
             if (_valores == null)
@@ -274,7 +272,7 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel PercentualDeUsoElevadorC()
         {
-            RetornoModel retorno = new();
+            RetornoModel retorno = new RetornoModel();
             decimal percentualUsoElevador = 0;
 
 
@@ -301,7 +299,7 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel PercentualDeUsoElevadorD()
         {
-            RetornoModel retorno = new();
+            RetornoModel retorno = new RetornoModel();
             decimal percentualUsoElevador = 0;
 
             if (_valores == null)
@@ -327,7 +325,7 @@ namespace ProvaAdmissionalCSharpApisul.Service
 
         public RetornoModel PercentualDeUsoElevadorE()
         {
-            RetornoModel retorno = new();
+            RetornoModel retorno = new RetornoModel();
             decimal percentualUsoElevador = 0;
 
             if (_valores == null)
