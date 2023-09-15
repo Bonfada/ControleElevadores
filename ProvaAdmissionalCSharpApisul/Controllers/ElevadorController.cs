@@ -16,17 +16,14 @@ namespace ProvaAdmissionalCSharpApisul.Controllers
         private IElevadorService _service;
 
         public ElevadorController(IElevadorService service)
-        {
-            _service = service;
+            => _service = service;
 
-        }
 
         [HttpPost("Carregar")]
         public ActionResult<bool> Load(List<ElevadorModel> valores)
         {
             try
             {
-
                 _service.Load(valores);
             }
             catch (Exception)
@@ -37,7 +34,6 @@ namespace ProvaAdmissionalCSharpApisul.Controllers
             return Ok(true);
 
         }
-
 
         [HttpPost("Andar-menos-utilizado")]
         public ActionResult<List<int>> AndarMenosUtilizado()
@@ -61,7 +57,6 @@ namespace ProvaAdmissionalCSharpApisul.Controllers
             return Ok(retorno.Andares);
 
         }
-
 
         [HttpPost("Periodo-elevador-mais-frequentado")]
         public ActionResult<List<int>> PeriodoMaiorFluxoElevadorMaisFrequentado()
@@ -97,7 +92,6 @@ namespace ProvaAdmissionalCSharpApisul.Controllers
             return Ok(retorno);
 
         }
-
 
         [HttpPost("Periodo-maior-utilizacao")]
         public ActionResult<List<int>> PeriodoMaiorUtilizacao()
