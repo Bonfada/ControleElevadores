@@ -225,6 +225,13 @@ namespace ProvaAdmissionalCSharpApisul.Service
             RetornoModel retorno = new();
             decimal percentualUsoElevador = 0;
 
+            if (_valores == null)
+            {
+                retorno.Success = false;
+                retorno.Message = "Nenhum arquivo encontrado. Carregue um novo arquivo para continuar";
+                return retorno;
+            }
+
             var el = _valores
                         .Where(x => x.Elevador.Equals('A'))
                         .ToList();
@@ -232,30 +239,36 @@ namespace ProvaAdmissionalCSharpApisul.Service
             var totalElevadores = _valores.Count();
             var quantidadeElevadorA = el.Count();
 
-            percentualUsoElevador = quantidadeElevadorA / quantidadeElevadorA * 100;
+            percentualUsoElevador = quantidadeElevadorA / totalElevadores * 100;
 
             retorno.PercentualUso = decimal.Parse(percentualUsoElevador.ToString("N2"));
-
+            retorno.Success = true;
             return retorno;
         }
 
         public RetornoModel PercentualDeUsoElevadorB()
         {
             RetornoModel retorno = new RetornoModel();
-
             decimal percentualUsoElevador = 0;
+
+            if (_valores == null)
+            {
+                retorno.Success = false;
+                retorno.Message = "Nenhum arquivo encontrado. Carregue um novo arquivo para continuar";
+                return retorno;
+            }
 
             var el = _valores
                         .Where(x => x.Elevador.Equals('B'))
                         .ToList();
 
             var totalElevadores = _valores.Count();
-            var quantidadeElevadorA = el.Count();
+            var quantidadeElevadorB = el.Count();
 
-            percentualUsoElevador = quantidadeElevadorA / quantidadeElevadorA * 100;
+            percentualUsoElevador = quantidadeElevadorB / totalElevadores * 100;
 
             retorno.PercentualUso = decimal.Parse(percentualUsoElevador.ToString("N2"));
-
+            retorno.Success = true;
             return retorno;
         }
 
@@ -264,17 +277,25 @@ namespace ProvaAdmissionalCSharpApisul.Service
             RetornoModel retorno = new();
             decimal percentualUsoElevador = 0;
 
+
+            if (_valores == null)
+            {
+                retorno.Success = false;
+                retorno.Message = "Nenhum arquivo encontrado. Carregue um novo arquivo para continuar";
+                return retorno;
+            }
+
             var el = _valores
                         .Where(x => x.Elevador.Equals('C'))
                         .ToList();
 
             var totalElevadores = _valores.Count();
-            var quantidadeElevadorA = el.Count();
+            var quantidadeElevadorC = el.Count();
 
-            percentualUsoElevador = quantidadeElevadorA / quantidadeElevadorA * 100;
+            percentualUsoElevador = quantidadeElevadorC / totalElevadores * 100;
 
             retorno.PercentualUso = decimal.Parse(percentualUsoElevador.ToString("N2"));
-
+            retorno.Success = true;
             return retorno;
         }
 
@@ -283,17 +304,24 @@ namespace ProvaAdmissionalCSharpApisul.Service
             RetornoModel retorno = new();
             decimal percentualUsoElevador = 0;
 
+            if (_valores == null)
+            {
+                retorno.Success = false;
+                retorno.Message = "Nenhum arquivo encontrado. Carregue um novo arquivo para continuar";
+                return retorno;
+            }
+
             var el = _valores
                         .Where(x => x.Elevador.Equals('D'))
                         .ToList();
 
             var totalElevadores = _valores.Count();
-            var quantidadeElevadorA = el.Count();
+            var quantidadeElevadorD = el.Count();
 
-            percentualUsoElevador = quantidadeElevadorA / quantidadeElevadorA * 100;
+            percentualUsoElevador = quantidadeElevadorD / totalElevadores * 100;
 
             retorno.PercentualUso = decimal.Parse(percentualUsoElevador.ToString("N2"));
-
+            retorno.Success = true;
             return retorno;
         }
 
@@ -302,17 +330,24 @@ namespace ProvaAdmissionalCSharpApisul.Service
             RetornoModel retorno = new();
             decimal percentualUsoElevador = 0;
 
+            if (_valores == null)
+            {
+                retorno.Success = false;
+                retorno.Message = "Nenhum arquivo encontrado. Carregue um novo arquivo para continuar";
+                return retorno;
+            }
+
             var el = _valores
                         .Where(x => x.Elevador.Equals('E'))
                         .ToList();
 
             var totalElevadores = _valores.Count();
-            var quantidadeElevadorA = el.Count();
+            var quantidadeElevadorE = el.Count();
 
-            percentualUsoElevador = quantidadeElevadorA / quantidadeElevadorA * 100;
+            percentualUsoElevador = quantidadeElevadorE / totalElevadores * 100;
 
             retorno.PercentualUso = decimal.Parse(percentualUsoElevador.ToString("N2"));
-
+            retorno.Success = true;
             return retorno;
         }
 

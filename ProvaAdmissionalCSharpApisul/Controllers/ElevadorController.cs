@@ -99,5 +99,114 @@ namespace ProvaAdmissionalCSharpApisul.Controllers
         }
 
 
+        [HttpPost("Periodo-maior-utilizacao")]
+        public ActionResult<List<int>> PeriodoMaiorUtilizacao()
+        {
+            RetornoModel retorno = null;
+
+            try
+            {
+                retorno = _service.PeriodoMaiorUtilizacaoConjuntoElevadores();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"Ocorreu um erro ao processar sua requisição {HttpStatusCode.InternalServerError}");
+            }
+
+            return Ok(retorno);
+
+        }
+
+        [HttpPost("Percentual-uso-Elevador-A")]
+        public ActionResult<List<int>> PercentualDeUsoElevadorA()
+        {
+            RetornoModel retorno = null;
+
+            try
+            {
+                retorno = _service.PercentualDeUsoElevadorA();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"Ocorreu um erro ao processar sua requisição {HttpStatusCode.InternalServerError}");
+            }
+
+            return Ok(retorno);
+
+        }
+
+        [HttpPost("Percentual-uso-Elevador-B")]
+        public ActionResult<List<int>> PercentualDeUsoElevadorB()
+        {
+            RetornoModel retorno = null;
+
+            try
+            {
+                retorno = _service.PercentualDeUsoElevadorB();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"Ocorreu um erro ao processar sua requisição {HttpStatusCode.InternalServerError}");
+            }
+
+            return Ok(retorno);
+
+        }
+
+        [HttpPost("Percentual-uso-Elevador-C")]
+        public ActionResult<List<int>> PercentualDeUsoElevadorC()
+        {
+            RetornoModel retorno = null;
+
+            try
+            {
+                retorno = _service.PercentualDeUsoElevadorC();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"Ocorreu um erro ao processar sua requisição {HttpStatusCode.InternalServerError}");
+            }
+
+            return Ok(retorno);
+
+        }
+
+        [HttpPost("Percentual-uso-Elevador-D")]
+        public ActionResult<List<int>> PercentualDeUsoElevadorD()
+        {
+            RetornoModel retorno = null;
+
+            try
+            {
+                retorno = _service.PercentualDeUsoElevadorD();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"Ocorreu um erro ao processar sua requisição {HttpStatusCode.InternalServerError}");
+            }
+
+            return Ok(retorno);
+
+        }
+
+        [HttpPost("Percentual-uso-Elevador-E")]
+        public ActionResult<List<int>> PercentualDeUsoElevadorE()
+        {
+            RetornoModel retorno = null;
+
+            try
+            {
+                retorno = _service.PercentualDeUsoElevadorE();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"Ocorreu um erro ao processar sua requisição {HttpStatusCode.InternalServerError}");
+            }
+
+            return Ok(retorno);
+
+        }
+
+
     }
 }
